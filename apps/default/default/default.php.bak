@@ -1,0 +1,217 @@
+<?
+$folder = Http::getOverPost('f');
+$current_page = Http::getOverPost('page');
+
+$folder_raw = $folder;
+$folder = base64_decode($folder);
+$folder = $folder == '' ? PATH_ORIGINALS_ROOT : $folder . '/';
+
+$breadcrumbs = explode('/', str_replace(PATH_ORIGINALS_ROOT, '', $folder));
+
+//$files = File::getFilesForm($folder . '*.jpg');
+$current_page = $current_page == '' ? 0 : $current_page;
+$files_obj = File::getPaginatedFilesForm($folder, $current_page, MAX_FILES_PER_PAGE);
+?>
+<style>
+	.img-holder{
+		width: <?= THUMB_MAX_W ?>px;
+		height: <?= (THUMB_MAX_H + 40) ?>px;
+		border: 1px solid #F14E23;
+		padding: 5px;
+		margin: 0 10px 10px 0;
+		float: left;
+	}
+
+	.img-holder:hover {
+		border: 1px solid #58585A;
+		background-color: #D8D8D8;
+	}
+
+	.img-holder a{
+		color: #F14E23;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.img-holder a:hover{
+		text-decoration: underline;
+	}
+
+	.img-thumb{
+		width: <?= THUMB_MAX_W ?>px;
+		height: <?= THUMB_MAX_H ?>px;
+		line-height: <?= (THUMB_MAX_H - 2) ?>px;
+		text-align: center;
+		vertical-align: middle;
+		/*background: url(static/img/stripe.png)*/
+	}
+
+	.img-thumb img {
+		margin: auto;
+		vertical-align: middle;
+	}
+
+	.img-label {
+		font-size: 0.8em;
+		width: <?= THUMB_MAX_W ?>px;
+		height: 15px;
+		overflow: hidden;
+		margin-top: 5px;
+	}
+
+
+
+</style>
+
+<div class="box-text">
+	<h1>
+		<a href="?f=<?= base64_encode(PATH_ORIGINALS_ROOT) ?>"><?= EVENT_NAME ?></a> \ 
+		<?
+		$path = PATH_ORIGINALS_ROOT;
+		foreach ($breadcrumbs as $bread) {
+			if ($bread != '') {
+				$path .= $bread . '/';
+				?>
+				<a href="?f=<?= base64_encode($path) ?>"><?= utf8_encode($bread) ?></a> \
+				<?
+			}
+		}
+		?>
+	</h1>
+</div>
+
+<div id="minicart" class="bar"></div>
+
+<div class="box-text">
+	<div id="gallery" class="floatl">
+		<?
+		if (count($files_obj->files) > 0) {
+			foreach ($files_obj->files as $file) {
+				?>
+				<?
+				$im = str_replace(PATH_ORIGINALS_ROOT, '', $file);
+				$im = utf8_encode($im);
+				?>
+				<div class="img-holder">
+					<div class="img-thumb">
+						<a href="javascript:openViewMedia('<?= base64_encode($im) ?>');" title="Seleccionar Copias">
+							<? if (strtolower(pathinfo($im, PATHINFO_EXTENSION)) == 'mp4') { ?>
+								<img src="static/img/video_icon_thumb.png" />
+							<? } else { ?>
+								<img src="<?= Img::crop('images/' . PATH_ORIGINALS . $im, THUMB_SIZE) ?>" />
+							<? } ?>
+						</a>
+					</div>
+					<div class="img-label">
+						<?= basename($im) ?>
+					</div>
+					<a href="javascript:openViewMedia('<?= base64_encode($im) ?>');" title="Seleccionar Copias">Seleccionar Copias</a>
+
+				</div>
+			<? } ?>
+			<div class="clearb"></div>
+			<ul class="paginator">
+				<? if ($files_obj->pages_qty > 1) { ?>
+					<? if ($current_page == 0) { ?>
+						
+					<? } else { ?>
+						<li><a href="?f=<?= $folder_raw ?>&page=<?= ($current_page - 1) ?>">&larr;</a></li>
+					<? } ?>
+
+					<?
+					for ($i = 0; $i < $files_obj->pages_qty; $i++) {
+						if ($current_page == $i) {
+							?>
+							<li class="current"><?= ($i + 1) ?></li>
+						<? } else { ?>
+							<li><a href="?f=<?= $folder_raw ?>&page=<?= $i ?>"><?= ($i + 1) ?></a></li>
+							<?
+						}
+					}
+					?>
+
+					<? if ($current_page == $files_obj->pages_qty - 1) { ?>
+						
+					<? } else { ?>
+						<li><a href="?f=<?= $folder_raw ?>&page=<?= ($current_page + 1) ?>">&rarr;</a></li>
+					<? }
+				}
+				?>
+
+			</ul>
+<? } ?>
+		&nbsp;
+	</div>
+	<div id="folders" class="floatl">
+		<ul id="folder-tree"><li><a href="?f=<?= base64_encode(PATH_ORIGINALS_ROOT) ?>"><?= EVENT_NAME ?></a>
+<?= Folder::createTree(PATH_ORIGINALS_ROOT, '?f=', '', base64_decode($folder_raw)); ?>
+			</li></ul>
+	</div>
+</div>
+<div class="clearb"></div>
+
+<script type="text/javascript" charset="utf-8">
+	function closeViewMedia(event, ui){
+		$('#view-media').dialog("close");
+		$('#view-media').html("");
+	}
+	
+	function refreshCart(){
+		//console.info("Refresh cart");
+		$('#minicart').load('ajax/minicart');
+	}
+	
+	function cropMedia(im){
+		var valid = false;
+		$('.steeper-label').each(function(index){
+			if ($(this).val() != 0){
+				valid = true;
+				return;
+			}
+		});
+		
+		if (valid){
+			$('#order-frm').submit();		
+		} else {
+			showAlert("Error", "Debe seleccionar algun formato.")
+		}
+		
+	}
+	
+	function showAlert(title, msg){
+		$('#msg').html(msg);
+		$('#msg').dialog({
+			title: title,
+			modal:true,
+			buttons: {
+				"Cerrar":function() { $(this).dialog("close"); }
+			}
+		});
+	}
+	
+	function openViewMedia(im){
+				
+		$('#view-media').html("");		
+		$('#view-media').load('ajax/view_media?m=' + im).dialog({
+			title: "Encargar copia",
+			resizable:false,
+			modal:true,
+			close: function(){
+				$('#view-media').html("");
+			}, 
+			buttons: { 
+				"Continuar": function() { 
+					cropMedia(im);
+				},
+				"Cerrar":function() { 
+					$(this).dialog("close"); 
+					$('#view-media').html(""); 
+				}
+			}
+		});
+	}
+	
+	refreshCart();
+</script>
+<div id="view-media" title="Seleccionar Copias" style="display: none;"></div>
+<div id="msg" style="display: none;"></div>

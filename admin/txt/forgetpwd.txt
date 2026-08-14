@@ -1,0 +1,13 @@
+Subject: Administrador de Contenidos - Recordatorio de clave
+From: <!--$From-->
+To: <!--$To-->
+Cc:
+Bcc:
+Format: TEXT
+
+Estimado Usuario,
+
+Debajo se encuentran sus datos para acceder al módulo administrativo:
+
+Usuario: <!--$UserName-->
+Clave: <!--$Password-->

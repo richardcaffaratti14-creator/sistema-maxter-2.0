@@ -1,0 +1,17 @@
+# Build
+bin/
+obj/
+dist/
+
+# Runtime data generada (NO versionar)
+/config/httpd.generated.conf
+/config/my.generated.ini
+/logs/
+/runtime/db/data/
+
+# Binarios vendorizados pesados (se distribuyen aparte, no en el repo)
+/runtime/web/bin/
+/runtime/web/modules/
+/runtime/php/
+/runtime/db/bin/
+/runtime/db/seed/maxter.sql

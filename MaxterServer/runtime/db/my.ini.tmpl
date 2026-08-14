@@ -1,0 +1,17 @@
+# ============================================================================
+#  Plantilla de configuracion del motor de base de datos interno de Maxter Server.
+#  El Runtime genera config/my.generated.ini sustituyendo los tokens {{...}}.
+# ============================================================================
+
+[mysqld]
+datadir={{DATA_DIR}}
+basedir={{BASE_DIR}}
+port={{PORT}}
+bind-address=127.0.0.1
+skip-name-resolve
+# Compatibilidad con el cliente ext/mysql de PHP 5.6:
+default-authentication-plugin=mysql_native_password
+
+[client]
+port={{PORT}}
+host=127.0.0.1

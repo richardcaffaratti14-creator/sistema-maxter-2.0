@@ -1,0 +1,39 @@
+{
+  "runtimeName": "Maxter Server",
+  "runtimeVersion": "1.0.0",
+  "components": [
+    {
+      "id": "web",
+      "name": "Servidor web interno",
+      "version": "2.4.25-VC11-x64",
+      "path": "web",
+      "executable": "bin/httpd.exe",
+      "integrity": {
+        "conf/httpd.conf.tmpl": "",
+        "bin/httpd.exe": ""
+      }
+    },
+    {
+      "id": "php",
+      "name": "Motor PHP interno",
+      "version": "5.6.40-VC11-x64-TS",
+      "path": "php",
+      "executable": "",
+      "integrity": {
+        "php5apache2_4.dll": "",
+        "php.ini": ""
+      }
+    },
+    {
+      "id": "db",
+      "name": "Motor de base de datos interno",
+      "version": "10.6-x64",
+      "path": "db",
+      "executable": "bin/mysqld.exe",
+      "integrity": {
+        "bin/mysqld.exe": "",
+        "my.ini.tmpl": ""
+      }
+    }
+  ]
+}

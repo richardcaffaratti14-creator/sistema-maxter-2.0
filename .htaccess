@@ -1,0 +1,21 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+<IfModule mod_php4.c>
+    php_flag session.use_trans_sid off
+</IfModule>
+
+# this is for images app
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^images(.*)$ index.php?params=images$1&%1 [L]
+
+RewriteRule ^/.*(\.css)|(\.php)|(\.jpg)|(\.png)|(\.html)|(\.gif)|(\.js)|(\.txt)|(\.ico)|(\.flv)|(\.swf)|(\.doc)|(\.pdf)|(\.zip)$ - [L]
+
+########################
+
+RewriteRule ^static(.*)$ - [L]
+
+########################
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$ index.php?params=$1&%1 [L]

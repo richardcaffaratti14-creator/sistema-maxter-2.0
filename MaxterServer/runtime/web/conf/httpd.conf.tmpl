@@ -1,0 +1,55 @@
+# ============================================================================
+#  Plantilla de configuracion del servidor web interno de Maxter Server.
+#  El Runtime genera config/httpd.generated.conf sustituyendo los tokens {{...}}
+#  con rutas absolutas resueltas en ejecucion. NO editar el generado a mano.
+# ============================================================================
+
+ServerRoot "{{SERVER_ROOT}}"
+Listen 0.0.0.0:{{PORT}}
+ServerName localhost:{{PORT}}
+
+# Errores de Apache al log del Runtime (asi el supervisor puede volcarlos si falla el arranque).
+ErrorLog "{{ERROR_LOG}}"
+LogLevel warn
+
+# --- MPM ---
+# En Windows, mpm_winnt esta compilado DENTRO del core de Apache: NO se hace LoadModule
+# (hacerlo da "Cannot load modules/mod_mpm_winnt.so" o "More than one MPM loaded").
+
+# --- Modulos esenciales (ajustar a los presentes en el build vendorizado) ---
+LoadModule authz_core_module modules/mod_authz_core.so
+LoadModule authz_host_module modules/mod_authz_host.so
+LoadModule access_compat_module modules/mod_access_compat.so
+LoadModule dir_module modules/mod_dir.so
+LoadModule mime_module modules/mod_mime.so
+LoadModule log_config_module modules/mod_log_config.so
+LoadModule setenvif_module modules/mod_setenvif.so
+LoadModule alias_module modules/mod_alias.so
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule headers_module modules/mod_headers.so
+LoadModule env_module modules/mod_env.so
+
+# --- PHP 5.6 como modulo (mod_php, build VC11 x64 Thread-Safe) ---
+LoadModule php5_module "{{PHP_DIR}}/php5apache2_4.dll"
+# php.ini generado por el Runtime (base vendorizada + extension_dir absoluto + extensiones MySQL).
+PHPIniDir "{{PHP_INI_DIR}}"
+AddHandler application/x-httpd-php .php
+AddType application/x-httpd-php .php
+
+# --- Publicacion de la aplicacion Maxter ---
+DocumentRoot "{{DOC_ROOT}}"
+DirectoryIndex index.php index.html
+
+<Directory />
+    AllowOverride none
+    Require all denied
+</Directory>
+
+<Directory "{{DOC_ROOT}}">
+    Options +FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+# Tipos MIME minimos
+TypesConfig conf/mime.types

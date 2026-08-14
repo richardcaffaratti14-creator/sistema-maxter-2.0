@@ -1,0 +1,7 @@
+Options -Indexes
+
+Options +FollowSymLinks +SymLinksIfOwnerMatch
+
+RewriteEngine on
+
+RewriteRule img/(.*)  ../img/$1 [L]

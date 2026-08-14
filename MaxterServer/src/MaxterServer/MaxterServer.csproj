@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Producto: Maxter Server (supervisor del Runtime).
+    Las propiedades de publicacion (RID win-x64, self-contained, single-file) se pasan
+    en el comando 'dotnet publish' (ver plan, Task 10), no aqui, para que 'build' y
+    'test' sean portables. NoWarn CA1416: el producto es Windows-only por diseño.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>MaxterServer</AssemblyName>
+    <RootNamespace>MaxterServer</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+
+  <!-- El proyecto de tests puede ver miembros internal (ResolveRoot, HasRuntime, etc.) -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="MaxterServer.Tests" />
+  </ItemGroup>
+
+</Project>

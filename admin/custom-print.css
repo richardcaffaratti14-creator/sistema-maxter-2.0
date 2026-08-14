@@ -1,0 +1,20 @@
+* {
+	font-family: Arial;
+	color: #000;
+	font-size: 12px;
+}
+.noprint {
+	display: none;
+}
+
+.ewTable {
+	border-collapse: collapse;
+}
+.ewTable td, .ewTable th {
+	padding: 6px;
+	border: 1px solid #ccc;
+}
+.ewTableHeader {
+	vertical-align: top;
+	font-weight:bold;
+}

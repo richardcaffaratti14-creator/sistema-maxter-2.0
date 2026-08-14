@@ -1,0 +1,636 @@
+#WELCOMEMSG {
+    border:1px solid #77b800;
+    background-color:#E5FFC7;
+    color:#77b800;
+    font-size:14px;
+    margin:15px 0;
+    width:900px;
+    padding:15px;
+    margin-left:auto;
+    margin-right:auto
+}
+
+#ewpagerform table td {
+    padding-top:10px;
+}
+
+.ewBasicSearch td {
+    padding:3px;
+}
+
+
+tr.ewTableRow td.idiomabreak , tr.ewTableAltRow td.idiomabreak {
+    background-color:#6B6863;
+    color:#fff;
+}
+
+/* CSS Document */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#53514c;
+}
+
+.tablername {
+	text-transform:uppercase;
+	color:#53514c;
+	font-weight:bold;
+}
+
+.bl_text1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+}
+.bl_text_grn {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4c9702;
+	text-decoration: none;
+}
+
+.bl_text_grn:hover {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #2c5709;
+	text-decoration: none;
+}
+
+.sus_text {
+
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+
+.sus_text:hover {
+
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #838383;
+	text-decoration: none;
+}
+
+.red_text {
+
+
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #bb0000;
+	text-decoration: none;
+}
+
+.red_text:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ed4448;
+	text-decoration: none;
+}
+
+
+
+
+.subheader {
+	width:900px;
+	background-color:#EEEEEE;
+}
+
+#ewlistmain {
+	width:880px;
+	border-left:1px solid #DDDDDD;
+	border-right:1px solid #DDDDDD;
+	border-bottom:1px solid #DDDDDD;
+}
+
+.subheader {
+	border-left:1px solid #DDDDDD;
+	border-right:1px solid #DDDDDD;
+	border-top:1px solid #DDDDDD;
+}
+.subheader td {
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#53514c;
+}
+
+tr.ewTableHeader td , td.ewTableHeader{
+	color:#53514c;
+	background:#fff;
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+}
+.ewTableHeader a:link , .ewTableHeader a:visited , .ewTableHeader a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color:#53514c;
+	text-transform:uppercase;
+}
+
+tr.ewTableRow {
+	background:#EEEEEE;
+}
+
+tr.ewTableRow td , tr.ewTableAltRow td{
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#53514c;
+}
+
+
+table.phpmakerlist tr td {
+    padding:2px !important;
+}
+
+
+
+tr.ewTableAltRow {
+	background:#F7F7F7;
+}
+
+
+.ewTableHighlightRow {
+	background-color: #CCFF99; /* highlight color */
+}
+
+.ewTableSelectRow {
+	background-color: #99FFFF; /* select color */
+}
+
+.ewTableHighlightRow td , .ewTableSelectRow td {
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#53514c;
+}
+
+
+
+
+
+
+
+
+
+
+span.phpmaker a {
+	color:#53514C;
+	font-weight:bold;
+	background-color:#FFFFFF;
+	padding:3px 10px;
+	border:1px solid #999999;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+span.phpmaker a:hover {
+	color:#4C9702;
+}
+
+
+
+
+
+
+span.phpmaker .button-add a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+.button-add {
+	background-image: url(images/ad.gif);
+	background-repeat: no-repeat;
+	height:25px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	float:right;
+	margin-left:15px;
+}
+
+.button-delete {
+	background-image: url(images/delete.gif);
+	background-repeat: no-repeat;
+	height:25px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	float:right;
+	margin-left:15px;
+}
+
+
+span.phpmaker .button-delete a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	color: #bb0000;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+.button-update  {
+	background-image: url(images/edit.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	text-transform:uppercase;
+	float:right;
+	margin-left:15px;
+}
+
+span.phpmaker .button-update a  {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+
+.button-edit {
+	background-image: url(images/edit_button.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	text-transform:uppercase;
+	float:right;
+	margin-left:15px;
+}
+
+span.phpmaker .button-edit a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+
+.button-email {
+	background-image: url(images/email_button.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	text-transform:uppercase;
+	float:right;
+	margin-left:15px;
+}
+
+.button-view {
+	background-image: url(images/view_button.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	text-transform:uppercase;
+	float:right;
+	margin-left:15px;
+}
+
+span.phpmaker .button-view a , span.phpmaker .button-email a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+
+.button-copy {
+	background-image: url(images/copy_button.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+	padding-left:30px;	
+	padding-top:5px;	
+	text-transform:uppercase;
+	float:right;
+	margin-left:15px;
+}
+
+span.phpmaker .button-copy a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+	display:block;
+	text-transform:uppercase;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+
+.edit {
+	background-image: url(images/edit_button.gif);
+	background-repeat: no-repeat;
+	height:23px;
+	width:80px;
+	_width:96px;
+}
+.header_back {
+	background-image: url(images/header_back.gif);
+	background-repeat: repeat-x;
+	height:116px;
+}
+.header_text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #616161;
+}
+.top_back {
+	background-image: url(images/top_back.gif);
+	background-repeat: repeat-x;
+	height:22px;
+}
+.top_link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #587391;
+	text-decoration: none;
+}
+
+
+.top_link:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+}
+.stk {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #7c7971;
+	text-decoration: none;
+}
+body {
+	background-image: url(images/body_back.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	margin-top:0px;
+	background-color:#e7e7e7;
+}
+#dolphincontainer{position:relative; color:#51524c;background:#ffffff;
+width:100%;font-family:Arial;}
+#dolphinnav{position:relative;height:42px;font-size:11px;text-transform:uppercase;font-weight:bold;background:#53524e url(images/dolphin_bg.gif) repeat-x bottom left;padding:0 0 0 20px;}
+#dolphinnav ul{margin:0;padding:0;list-style-type:none;width:auto;float:left;}
+#dolphinnav ul li{display:block;float:left;margin:0 1px;}
+#dolphinnav ul li a{display:block;float:left;color:#ffffff; text-decoration:none;padding:0 0 0 20px;height:42px;}
+#dolphinnav ul li a span{padding:15px 20px 0 0;height:21px;float:left;}
+#dolphinnav ul li a:hover{color:#53514c;background:transparent url(images/dolphin_bg-OVER.gif) repeat-x bottom left;}
+#dolphinnav ul li a:hover span{display:block;width:auto;cursor:pointer;}
+#dolphinnav ul li a.current,#dolphinnav ul li a.current:hover{color:#53524e;background:#1D6893 url(images/dolphin_left-ON.gif) no-repeat top left;line-height:375%;}
+#dolphinnav ul li a.current span{display:block;padding:0 20px 0 0;width:auto;background:#1D6893 url(images/dolphin_right-ON.gif) no-repeat top right;height:42px;}
+
+#dolphin_inner{color: #53514c; padding:5px 0px 10px 0; font-size: 80%; height: 1em}
+#dolphin_inner ul{margin:0;padding:0;list-style-type:none;width:auto;float:left; padding-left:20px;}
+#dolphin_inner ul li{display:block;float:left;margin:0 1px;}
+#dolphin_inner ul li a span{padding:5px 25px 0 0px;height:0px;float:left;}
+#dolphin_inner ul li a:hover{color:#8f8f8f; text-decoration:none; }
+#dolphin_inner ul li a:hover span{display:block;width:auto;cursor:pointer;}
+#dolphin_inner ul li a.current,#dolphinnav ul li a.current:hover{color:#53524e;}
+#dolphin_inner ul li a.current span{display:block;padding:0 0px 0 0;width:auto; no-repeat top right;height:0px;}
+
+#dolphin_inner a:link, #dolphin_inner a:visited, #dolphin_inner a:active{color: #616161; font-weight:bold; font-size:11px; font-family:Arial, Helvetica, sans-serif; text-decoration:none;}
+#dolphin_inner a:hover{color: yellow}
+
+.innercontent{display: none;}
+.bl_text11 {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #53514c;
+	text-decoration: none;
+}
+
+.bl_text11:hover {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #a9a7a1;
+	text-decoration: none;
+}
+
+input#btnAction , input#Submit , input#Action , input[type="submit"] , .submitbutton {
+	background-color:#4C9702;
+	border:0;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-transform:uppercase;
+	height:20px;
+	padding:0 5px;
+}
+
+.submitbutton {
+    margin-top:5px;
+}
+
+input.cropperbtn {
+	background-color:#4C9702;
+	border:0;
+	color:#FFFFFF;
+	font-weight:bold;
+	height:17px;
+	padding:0 0px;
+    margin-top:5px;
+}
+
+
+.ewContentColumn {
+	padding:10px;
+	text-align:center;
+}
+
+
+.ewTable {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#pagertable span.phpmaker a {
+	padding:3px 4px;
+}
+
+.ewHeaderRow {
+	background:none
+}
+
+#whiteback {
+	padding:10px;
+	width:878px;
+	background-color:#FFFFFF;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+
+
+
+
+
+
+
+
+/*--------------------------------- MESSAGES --------------------------------- */
+
+#errormessage, .errormessage {
+	color:#990000;
+
+	padding:10px;
+	border:1px solid #CC0000;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-weight:bold;
+}
+
+#errormessage .close, .errormessage .close {
+	float:right;
+	margin-top:-8px;
+	margin-right:-4px;
+}
+
+#errormessage .close a, .errormessage .close a {
+	color:#CC0000;
+	font-weight:normal;
+	font-size:11px;
+}
+
+#errormessage ul, .errormessage ul {
+	margin-top:0;
+	margin-bottom:0;
+	font-weight:bold;
+	border:0;
+}
+
+#errormessage li, .errormessage li {
+	border:0;
+	padding:0;
+}
+
+#errormessage span, .errormessage span {
+	color:#CC0000;
+	font-weight:bold;
+}
+
+
+
+
+
+
+#infomessage , .infomessage {
+	color:#3e9b01;
+	background-color:#E5FFC7;
+
+	padding:10px;
+	border:1px solid #77b800;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-weight:bold;
+}
+
+#infomessage .close, .infomessage .close {
+	float:right;
+	margin-top:-8px;
+	margin-right:-4px;
+}
+
+#infomessage .close a, .infomessage .close a {
+	color:#77b800;
+	font-weight:normal;
+	font-size:11px;
+}
+
+#infomessage ul , .infomessage ul {
+	margin-top:0;
+	margin-bottom:0;
+	font-weight:bold;
+	border:0;
+}
+
+#infomessage li, .infomessage li {
+	border:0;
+	padding:0;
+}
+
+#infomessage span , .infomessage span {
+	color:#3e9b01;
+	font-weight:bold;
+}
+
+/*--------------------------------- MESSAGES --------------------------------- */
+
+
+.graytext {
+    font-style:italic;
+    color:#505050;
+}
